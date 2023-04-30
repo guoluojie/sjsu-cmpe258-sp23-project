@@ -17,10 +17,13 @@ If possible, we will build our training datasets from existing resources if avai
 
 ## Software
 Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
+
 additional packages:
+```
 brew install tesseract
 pip install pytesseract
 pip install opencv-contrib-python
+```
 
 Dataset preparation doc: https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing
 
