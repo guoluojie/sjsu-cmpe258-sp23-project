@@ -33,7 +33,7 @@ pip install schemedraw
 How to setup and use the program:
 1. Install Anaconda
 2. Use the provided yaml file to create a conda environment
-  a. You can modify the yaml file to use a different environment name
+    1. You can modify the yaml file to use a different environment name
 ```$ conda env create -f conda-cpu.yml```
 3. Activate the environment
 ```$ conda activate <insert_env_name>```
