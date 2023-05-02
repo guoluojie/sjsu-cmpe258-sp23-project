@@ -23,11 +23,12 @@ If possible, we will build our training datasets from existing resources if avai
 Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
 
 Additional packages:
-```
-$ brew install tesseract
-$ pip install pytesseract
-$ pip install schemedraw
-```
+- Tesseract:
+    - via Anaconda ```$ conda install -c conda-forge tesseract```
+    - (Optional alternative for MacOS users): ```$ brew install tesseract```
+- Other:
+    - ```$ pip install pytesseract```
+    - ```$ pip install schemdraw```
 
 ## Dataset
 
