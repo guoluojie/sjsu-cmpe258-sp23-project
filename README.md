@@ -28,6 +28,7 @@ Additional packages:
     - (Optional alternative for MacOS users): ```$ brew install tesseract```
 - Other:
     - ```$ pip install pytesseract```
+    - ```$ pip install opencv-contrib-python```
     - ```$ pip install schemdraw```
 
 ## Dataset
