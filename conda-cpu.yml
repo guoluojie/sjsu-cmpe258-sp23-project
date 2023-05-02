@@ -1,4 +1,4 @@
-name: yolo2
+name: yolo
 
 dependencies:
   - python==3.7.13
