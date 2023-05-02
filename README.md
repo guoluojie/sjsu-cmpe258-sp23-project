@@ -1,5 +1,3 @@
-[Proposal](https://docs.google.com/document/d/1min_aHQF5sf6_ieqOGGpwV4Use2VStQybVCBv5W3MO8/edit?usp=sharing)
-
 # Hand-drawn Flowchart Recognition
 ## Team Members:
 - Mu Chen, MS-SE (mu.chen@sjsu.edu) [SJSU ID: 014725425]
@@ -7,6 +5,7 @@
 - Hardy Leung, MS-AI (kwok-shing.leung@sjsu.edu) [SJSU ID: 016711877] COORDINATOR
 - Jasmine Wang, MS-AI (jasmine.wang@sjsu.edu) [SJSU ID: 002805362]
 ---
+
 ## Abstract
 We propose to develop a method to recognize hand-drawn flowcharts to be used in software applications including word processors and presentation softwares. While many softwares provide functionality to recreate flowcharts using functionalities such as drawing circles, blocks, and arrows, they are often primitive and awkward to use. Anecdotal evidence suggests that many people avoid flowcharts due to such difficulty, despite the fact that flowcharts can often help succinctly summarize important concepts such as workflow and relationships. Our goal is to develop a DNN-based model that can take an image of a flowchart, and extract the blocks, text, arrows, and their relative positioning. Thereafter, the flowchart can be recreated in graphical applications.
 
@@ -25,7 +24,25 @@ pip install pytesseract
 pip install schemedraw
 ```
 
-Dataset preparation doc: https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing
+[Proposal](https://docs.google.com/document/d/1min_aHQF5sf6_ieqOGGpwV4Use2VStQybVCBv5W3MO8/edit?usp=sharing)
+[Dataset Preparation](https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing)
+
+---
+## Instructions
+
+How to setup and use the program:
+1. Install Anaconda
+2. Use the provided yaml file to create a conda environment.
+2.1. You can modify the yaml file to use a different environment name.
+```$ conda env create -f conda-cpu.yml```
+3. Activate the environment
+```$ conda activate <insert_env_name>
+4. Run the detection script.
+```$ python detection_custom.py
+
+How to train a custom dataset:
+- You can search through the [source repo](https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3)
+- Or look through their [main website](https://pylessons.com/)
 
 ---
 ## Model Evaluation
