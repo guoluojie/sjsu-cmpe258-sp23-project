@@ -17,11 +17,11 @@ If possible, we will build our training datasets from existing resources if avai
 ## Software
 Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
 
-additional packages:
+Additional packages:
 ```
-brew install tesseract
-pip install pytesseract
-pip install schemedraw
+$ brew install tesseract
+$ pip install pytesseract
+$ pip install schemedraw
 ```
 
 [Proposal](https://docs.google.com/document/d/1min_aHQF5sf6_ieqOGGpwV4Use2VStQybVCBv5W3MO8/edit?usp=sharing)
@@ -35,7 +35,8 @@ How to setup and use the program:
 2. Use the provided yaml file to create a conda environment ```$ conda env create -f conda-cpu.yml```
     1. You can modify the yaml file to use a different environment name
 3. Activate the environment ```$ conda activate <insert_env_name>```
-4. Run the detection script ```$ python detection_custom.py```
+4. Install the additional packages listed above in the previous section
+5. Run the detection script ```$ python detection_custom.py```
 
 How to train a custom dataset:
 - You can search through the [source repo](https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3)
