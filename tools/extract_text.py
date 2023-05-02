@@ -24,6 +24,6 @@ def detectText(text_obj, img):
     # blur = cv2.medianBlur(eroded,5)
     # pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'
     res = pytesseract.image_to_string(input, lang='eng', config='--psm 6') 
-    print(res)
+    # print(res)
     return res
 
