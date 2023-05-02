@@ -72,5 +72,10 @@ Enter in the terminal ```$ tensorboard --logdir=log``` and then navigate to http
 ### Validation Loss
 ![Validation Loss](./images/val.JPG)
 
+## Flowchart Recognition and Generation
+
 ### Sample Classification
 ![Sample Classification](./images/sample.png)
+
+### Flowchart Generation
+![Flowchart Drawing](./images/fc_drawing.png)
