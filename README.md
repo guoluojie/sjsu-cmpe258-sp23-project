@@ -4,6 +4,9 @@
 - Roger Kuo, MS-SE (roger.kuo@sjsu.edu) [SJSU ID: 013784706]
 - Hardy Leung, MS-AI (kwok-shing.leung@sjsu.edu) [SJSU ID: 016711877] COORDINATOR
 - Jasmine Wang, MS-AI (jasmine.wang@sjsu.edu) [SJSU ID: 002805362]
+
+[Proposal](https://docs.google.com/document/d/1min_aHQF5sf6_ieqOGGpwV4Use2VStQybVCBv5W3MO8/edit?usp=sharing)
+
 ---
 
 ## Abstract
@@ -17,15 +20,14 @@ If possible, we will build our training datasets from existing resources if avai
 ## Software
 Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
 
+[Dataset Preparation](https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing)
+
 Additional packages:
 ```
 $ brew install tesseract
 $ pip install pytesseract
 $ pip install schemedraw
 ```
-
-[Proposal](https://docs.google.com/document/d/1min_aHQF5sf6_ieqOGGpwV4Use2VStQybVCBv5W3MO8/edit?usp=sharing)
-[Dataset Preparation](https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing)
 
 ---
 ## Instructions
