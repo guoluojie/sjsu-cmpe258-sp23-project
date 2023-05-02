@@ -29,7 +29,7 @@ Additional packages:
 - Other:
     - ```$ pip install pytesseract```
     - ```$ pip install opencv-contrib-python```
-    - ```$ pip install schemdraw```
+    - ```$ pip install schemdraw[matplotlib]```
 
 ## Dataset
 
