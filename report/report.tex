@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+
+\usepackage[skip=7pt plus1pt, indent=0pt]{parskip}
+\usepackage{hyperref}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{cite}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\newcommand{\tall}{\phantom{\large PQq}}
+\thispagestyle{empty}
+
+\begin{document}
+\thispagestyle{empty}
+
+\vspace{-2em}
+\title{Hand-drawn Flowchart Recognition}
+\date{}
+
+\vspace{-2em}
+\author{Mu Chen, Roger Kuo, Hardy Leung, Jasmine Wang}
+
+\maketitle
+
+\vspace{-2em}
+\subsection*{Introduction}
+
+We propose to develop a method to recognize hand-drawn flowcharts to be
+used in software applications including word processors and presentation softwares.
+While many softwares provide functionality to recreate flowcharts using
+functionalities such as drawing circles, blocks, and arrows,
+they are often primitive and awkward to use. Anecdotal evidence suggests that
+many people avoid flowcharts due to such difficulty, despite the fact that
+flowcharts can often help succinctly summarize important concepts such as workflow
+and relationships. Our goal is to develop a DNN-based model that can take an image
+of a flowchart, and extract the blocks, text, arrows, and their relative
+positioning. Thereafter, the flowchart can be recreated in graphical applications.
+
+\subsection*{Coding and Training}
+
+Our approach will be based on either YOLO (v4 and above)
+or Faster R-CNN with fine-tuning on important flowchart elements such as blocks,
+circles, diamonds, arrows, and lines. Text elements will also be extracted
+and copied as-is (and extended to OCR in a future project).
+The main challenges of the project are: (1) acquiring dataset for training,
+(2) increasing the accuracy of the object detection, and
+(3) increasing the accuracy of the semantics we extract from the detected objects.
+We envision that the project entails a 4-stage process:
+(a) a preprocessing stage to cleanup the image based primarily on OpenCV,
+(b) an object detection stage using DNN such as a fine-tuned YOLO on our
+training dataset, and potentially specialized DNNs to classify elements such as
+lines beyond what YOLO can do, (c) an analysis stage that reconstruct the semantics
+of the flowchart,
+and (d) an assembly stage to save and recreate the flowchart in other formats
+suitable for further processing. We will provide an end-to-end demo
+of the whole process on real-world flowcharts.
+If possible, we will build our training datasets from existing resources if available,
+including datasets of individual elements that allow us to classify
+individual flowchart elements, as well as complete flowchart for testing purposes.
+If needed, we will also manually create necessary training data to
+improve the performance.
+
+\subsection*{Software}
+
+Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
+
+\subsection*{Contributions}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Name & Major \& ID & Main Responsibility & \textsc{C} &
+	\textsc{T\&V} & \textsc{P} & \textsc{ES} & Overall \\
+\hline
+Mu Chen & SE, 014725425 & R\&D, YOLO, arrows & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
+Roger Kuo & SE, 013784706 & R\&D, YOLO, rendering & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
+Hardy Leung${}^\star$ & AI, 016711877 &
+proposal, summary, coordinator & $10\%$ & $10\%$ & $10\%$ & $70\%$ & $25\%$ \\
+Jasmine Wang & AI, 002805362 & testing, presentation & $10\%$ & $10\%$ & $70\%$ & $10\%$ & $25\%$ \\ \hline
+\end{tabular}
+\caption{\textsc{C} = coding, \textsc{TV} =
+testing and verification,
+\textsc{P} = PPT, \textsc{ES} = executive summary. $\star$ Project Coordinator.
+}
+\end{table}
+
+% \bibliographystyle{acm}
+% \bibliography{paper}
+
+\end{document}
