@@ -22,7 +22,7 @@ additional packages:
 ```
 brew install tesseract
 pip install pytesseract
-pip install opencv-contrib-python
+pip install schemedraw
 ```
 
 Dataset preparation doc: https://docs.google.com/document/d/1iY2F0LpL9rOEVAxZMaGc8gkD9l-GDl9_IjW8bnVCrqw/edit?usp=sharing
