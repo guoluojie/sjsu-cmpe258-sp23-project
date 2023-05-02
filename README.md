@@ -32,13 +32,13 @@ pip install schemedraw
 
 How to setup and use the program:
 1. Install Anaconda
-2. Use the provided yaml file to create a conda environment.
-2.1. You can modify the yaml file to use a different environment name.
+2. Use the provided yaml file to create a conda environment
+  a. You can modify the yaml file to use a different environment name
 ```$ conda env create -f conda-cpu.yml```
 3. Activate the environment
-```$ conda activate <insert_env_name>
-4. Run the detection script.
-```$ python detection_custom.py
+```$ conda activate <insert_env_name>```
+4. Run the detection script
+```$ python detection_custom.py```
 
 How to train a custom dataset:
 - You can search through the [source repo](https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3)
@@ -47,7 +47,7 @@ How to train a custom dataset:
 ---
 ## Model Evaluation
 
-Enter in the terminal ```tensorboard --logdir=log``` and then navigate to http://localhost:6006/
+Enter in the terminal ```$ tensorboard --logdir=log``` and then navigate to http://localhost:6006/
 ### Training Loss
 ![Training Loss](./images/train.JPG)
 
