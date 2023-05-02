@@ -45,11 +45,16 @@ $ pip install schemedraw
 
 How to setup and use the program:
 1. Install Anaconda
-2. Use the provided yaml file to create a conda environment ```$ conda env create -f conda-cpu.yml```
-    1. You can modify the yaml file to use a different environment name
-3. Activate the environment ```$ conda activate <insert_env_name>```
-4. Install the additional packages listed above in the "Software" section
-5. Run the detection script ```$ python detection_custom.py```
+2. Use the provided yaml file to create a conda environment 
+    1. ```$ conda env create -f conda-cpu.yml```
+    2. You can modify the yaml file to use a different environment name
+3. Activate the environment 
+    1. ```$ conda activate <insert_env_name>```
+5. Install the additional packages listed above in the "Software" section
+6. Run the detection script 
+    1. ```$ python detection_custom.py```
+    2. You can also add and use your own hand-drawn flowchart image to the main directory
+    3. ```$ python detection_custom.py <insert_path_to_image>```
 
 How to train a custom dataset:
 - You can search through the [source repo](https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3)
