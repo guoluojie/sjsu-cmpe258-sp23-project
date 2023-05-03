@@ -78,4 +78,4 @@ Enter in the terminal ```$ tensorboard --logdir=log``` and then navigate to http
 ![Sample Classification](./images/sample.png)
 
 ### Flowchart Generation
-![Flowchart Drawing](./images/fc_drawing.png)
+![Flowchart Drawing](./images/fc_drawing.jpg)
