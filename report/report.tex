@@ -2,8 +2,13 @@
 
 \usepackage[skip=7pt plus1pt, indent=0pt]{parskip}
 \usepackage{hyperref}
-\usepackage[margin=0.8in]{geometry}
+\usepackage[margin=0.7in]{geometry}
 \usepackage{cite}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\thispagestyle{empty}
 
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
@@ -16,57 +21,81 @@
 \thispagestyle{empty}
 
 \vspace{-2em}
-\title{Hand-drawn Flowchart Recognition}
+\title{\textsc{CMPE-258} Executive Summary: Hand-drawn Flowchart Recognition}
 \date{}
 
 \vspace{-2em}
-\author{Mu Chen, Roger Kuo, Hardy Leung, Jasmine Wang}
+\author{}
+% \author{Mu Chen, Roger Kuo, Hardy Leung, Jasmine Wang}
 
 \maketitle
 
-\vspace{-2em}
-\subsection*{Introduction}
+\vspace{-5em}
 
-We propose to develop a method to recognize hand-drawn flowcharts to be
-used in software applications including word processors and presentation softwares.
-While many softwares provide functionality to recreate flowcharts using
-functionalities such as drawing circles, blocks, and arrows,
-they are often primitive and awkward to use. Anecdotal evidence suggests that
-many people avoid flowcharts due to such difficulty, despite the fact that
-flowcharts can often help succinctly summarize important concepts such as workflow
-and relationships. Our goal is to develop a DNN-based model that can take an image
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.28\columnwidth}
+\includegraphics[width=\columnwidth]{sample.png}
+\end{subfigure}
+\begin{subfigure}{0.28\columnwidth}
+\includegraphics[width=\columnwidth]{sample.png}
+\end{subfigure}
+\begin{subfigure}{0.28\columnwidth}
+\includegraphics[width=\columnwidth]{sample.png}
+\end{subfigure}
+\end{figure}
+
+In this project, we developed a program to recognize hand-drawn flowcharts.
+and render them in productivity applications including word processors
+and presentation softwares.
+
+Many softwares support the creation of flowcharts through providing
+drawing primatives such as circles, blocks, and arrows,
+they are often awkward to use. Many people avoid flowcharts due to such
+difficulty, despite flowcharts are versatile and are often the best and most
+succinct waay to summarize concepts such as workflow
+and relationships. We sought to offer a solution to this problem.
+
+We developed a deep learning model that takes take an image
 of a flowchart, and extract the blocks, text, arrows, and their relative
-positioning. Thereafter, the flowchart can be recreated in graphical applications.
+positioning.
+Thereafter, the flowchart can be recreated in graphical applications.
+Our approach was built on \textsc{yolo-v4}
+trained on objects specific to flowchart
+detection, including blocks (processes), parallelograms (data),
+diamonds (decisions), circles (I/O), arrows, and lines.
+We also extract text elements and converted to text using Tesseract
+\textsc{ocr}. The following are technical details of our implementation.
 
-\subsection*{Coding and Training}
+\begin{itemize}
+\item Our \textsc{yolo} was trained on a dataset with 600 annotated flowchart
+images, with custom \textsc{xml} preprocessing.
+\item Our model was trained to detect seven custom classes (\texttt{text}, \texttt{arrow}, \texttt{data}, \texttt{decision}, \texttt{process}, \texttt{terminator}, and \texttt{connection}), starting with
+pre-trained \textsc{yolo} weights. Training took a total of six hours with
+\textsc{GPU}, achieving an \textsc{mAP} of $90.365\%$.
+\item During post-processing, we compile a list of detected objects with a
+rich set of attributes, including position, size, object class, and confidence.
+\item We implemented a custom algorithm to detect arrow direction, using
+\textsc{openCV}. We also established the logical connections between directed
+edges and flowchart elements.
+\item Text elements were identified and converted to actual text using
+Google's \textsc{tesseract OCR} engine.
+\item We then follow the logical order of arrows to render the flowchart
+elements in order.
+\item Finally, to demonstrate  using \textsc{SchemaDraw} as the drawing application.
+\item We utilized the following tools in the project: \textsc{python 3},
+\textsc{openCV 2}, \textsc{Pytorch 2.0}, scripts from PyLessons,
+Google Colab (faster \textsc{GPU}-based training,
+\textsc{yolo-v4}, Google \textsc{tesseract}, and
+\textsc{schemaDraw}.
+\end{itemize}
 
-Our approach will be based on either YOLO (v4 and above)
-or Faster R-CNN with fine-tuning on important flowchart elements such as blocks,
-circles, diamonds, arrows, and lines. Text elements will also be extracted
-and copied as-is (and extended to OCR in a future project).
-The main challenges of the project are: (1) acquiring dataset for training,
-(2) increasing the accuracy of the object detection, and
-(3) increasing the accuracy of the semantics we extract from the detected objects.
-We envision that the project entails a 4-stage process:
-(a) a preprocessing stage to cleanup the image based primarily on OpenCV,
-(b) an object detection stage using DNN such as a fine-tuned YOLO on our
-training dataset, and potentially specialized DNNs to classify elements such as
-lines beyond what YOLO can do, (c) an analysis stage that reconstruct the semantics
-of the flowchart,
-and (d) an assembly stage to save and recreate the flowchart in other formats
-suitable for further processing. We will provide an end-to-end demo
-of the whole process on real-world flowcharts.
-If possible, we will build our training datasets from existing resources if available,
-including datasets of individual elements that allow us to classify
-individual flowchart elements, as well as complete flowchart for testing purposes.
-If needed, we will also manually create necessary training data to
-improve the performance.
 
-\subsection*{Software}
+We have successfully implemented a \textsc{yolo-v4} based program to
+recognize hand-drawn flowcharts, and demonstrated the effectiveness of our
+method.
 
-Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
-
-\subsection*{Contributions}
+% \subsection*{Contributions}
 
 \begin{table}[htbp]
 \centering
@@ -75,10 +104,10 @@ Python 3, OpenCV 2, Pytorch 2.0, Matplotlib, YOLO (v4 or above) or Faster R-CNN.
 Name & Major \& ID & Main Responsibility & \textsc{C} &
 	\textsc{T\&V} & \textsc{P} & \textsc{ES} & Overall \\
 \hline
-Mu Chen & SE, 014725425 & R\&D, YOLO, arrows & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
-Roger Kuo & SE, 013784706 & R\&D, YOLO, rendering & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
+Mu Chen & SE, 014725425 & R\&D, \textsc{yolo}, \textsc{schemaDraw} & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
+Roger Kuo & SE, 013784706 & R\&D, \textsc{yolo}, arrow detection & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
 Hardy Leung${}^\star$ & AI, 016711877 &
-proposal, summary, coordinator & $10\%$ & $10\%$ & $10\%$ & $70\%$ & $25\%$ \\
+Proposal, Summary, Coordinator & $10\%$ & $10\%$ & $10\%$ & $70\%$ & $25\%$ \\
 Jasmine Wang & AI, 002805362 & testing, presentation & $10\%$ & $10\%$ & $70\%$ & $10\%$ & $25\%$ \\ \hline
 \end{tabular}
 \caption{\textsc{C} = coding, \textsc{TV} =
