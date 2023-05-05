@@ -22,9 +22,8 @@ from yolov3.yolov4 import Create_Yolo
 from tools.draw_flowchart import draw_from_detection
 
 # Change input image
-# default = "./FlowChart/FlowChart_test/writer003_fc_002.png"
+# default = "./FlowChart/FlowChart_test/writer000_fc_002.png"
 # default = "./FlowChart/FlowChart_test/writer018_fc_011b.png"
-# default = "./FlowChart/FlowChart_test/writer000_fc_011.png"
 default = "./FlowChart/FlowChart_test/writer000_fc_019.png"
 
 image_path = default
@@ -55,7 +54,8 @@ text2obj, arrow2shape = get_relationships(objects)
 # print("\nArrow-shape relationships")
 # print(arrow2shape)      # { [arrowID: (headShapeID, tailShapeID)] ... }
 
-arrow_flow = get_arrow_flow(arrow2shape, objects)
+
+# arrow_flow = get_arrow_flow(arrow2shape, objects)
 # print("\nArrow flow")
 # print(arrow_flow)       # [ arrowId_1, arrowId_2, ... arrowId_N ]
 
