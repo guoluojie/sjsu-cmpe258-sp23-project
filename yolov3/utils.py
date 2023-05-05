@@ -259,15 +259,17 @@ def get_arrow_flow(arrow2shape, objects):
         tails.add(value[1])
 
     ends = heads - tails  # find all head shape Ids not used as tails
+    print(ends)
     starts = tails - heads    # find all tail shape Ids not used as heads
+    print(starts)
     start_id = get_terminator_id(starts, objects)
     end_id = get_terminator_id(ends, objects)
     if start_id is None or end_id is None:
-        raise Exception("No start and/or end terminator was identified")
+        raise Exception("Could not detect a complete flowchart")
 
     # get_flow(start_id, keys, values, flow)
     root = get_arrows(start_id, keys, values)[0]   # root arrow; view arrows as nodes
-    return get_tree(root, arrow2shape, keys, values, [])
+    return get_tree(root, arrow2shape, keys, values, [], set())
 
 def get_terminator_id(id_set, objects):
     # find id that is a terminator
@@ -277,18 +279,20 @@ def get_terminator_id(id_set, objects):
             return id
     return None
 
-def get_tree(node, arrow2shape, keys, values, tree):
+def get_tree(node, arrow2shape, keys, values, tree, shapes):
     # each node is an arrow id
     curr_head = arrow2shape[node][0]
-    next_arrows = get_arrows(curr_head, keys, values)
+    if curr_head not in shapes:
+        shapes.add(curr_head)
+        next_arrows = get_arrows(curr_head, keys, values)
 
-    tree.append(node)
-    if len(next_arrows) == 0:  # base case
-        return tree
+        tree.append(node)
+        if len(next_arrows) == 0:  # base case
+            return tree
 
-    # recursive call per child
-    for next_arrow in next_arrows:
-        tree = get_tree(next_arrow, arrow2shape, keys, values, tree)
+        # recursive call per child
+        for next_arrow in next_arrows:
+            tree = get_tree(next_arrow, arrow2shape, keys, values, tree, shapes)
     return tree
 
 def get_arrows(obj_id, keys, values):
