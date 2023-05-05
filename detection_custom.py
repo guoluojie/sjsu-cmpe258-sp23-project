@@ -34,11 +34,6 @@ if len(sys.argv) > 1:
         image_path = default
 else:
     print("No given image path, using default")
-    
-# image_path = input("Enter image path: ")
-# if not os.path.exists(image_path):
-#     print("Path doesn't exist. Using default")
-#     image_path = "./FlowChart/FlowChart_test/writer000_fc_011.png"
 
 yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
 yolo.load_weights("./checkpoints/yolov4_custom_Tiny")
