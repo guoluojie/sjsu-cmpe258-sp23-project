@@ -18,7 +18,7 @@ from enum import Enum
 #######
 
 def test():
-    with schemdraw.Drawing(file='fc_drawing.jpg') as d:
+    with schemdraw.Drawing(file='./output/fc_drawing.jpg') as d:
         d += (e := flow.Start().label(''))
         d += flow.Arrow().down(d.unit/2).at(e.S)
         d += (e := flow.Box().label(''))
@@ -35,7 +35,7 @@ def test():
         #  if both shapes are already there, then use wire
 
 def test2():
-    with schemdraw.Drawing(file='fc_drawing.jpg') as d:
+    with schemdraw.Drawing(file='./output/fc_drawing.jpg') as d:
         d.config(fontsize=11)
         d += (b := flow.Start().label('START'))
         d += flow.Arrow().down(d.unit/2)
@@ -146,7 +146,7 @@ def draw_from_detection(objects, arrow2shape):
     for arrow_id in arrow2shape:
          arrow_queue.append((arrow_id, arrow2shape[arrow_id][0], arrow2shape[arrow_id][1])) # (arrow_id, head_id, tail_id)
     # for each arrow, draw it's connecting tail shape, then arrow, then head shape
-    with schemdraw.Drawing(file='fc_drawing.jpg') as d:
+    with schemdraw.Drawing(file='./output/fc_drawing.jpg') as d:
         while len(arrow_queue) > 0:
             # print(arrow_queue)
             arrow = arrow_queue[0]
