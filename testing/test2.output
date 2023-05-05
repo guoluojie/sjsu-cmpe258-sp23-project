@@ -1,0 +1,18 @@
+python detection_custom.py testing/test2.png
+2023-05-04 14:55:50.681067: W tensorflow/tsl/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+1/1 [==============================] - 0s 258ms/step
+
+Objects:
+[(0, 201, 430, 267, 452, 'text', 0.5288500785827637), (1, 201, 164, 229, 219, 'arrow', 0.7032274007797241, (223, 210), (224, 169)), (2, 217, 376, 239, 418, 'arrow', 0.5970896482467651, (233, 419), (233, 386)), (3, 215, 274, 243, 323, 'arrow', 0.5903623104095459, (232, 310), (228, 279)), (4, 157, 219, 312, 272, 'data', 0.8650158047676086), (5, 175, 419, 296, 469, 'terminator', 0.8656086921691895), (6, 149, 98, 273, 151, 'terminator', 0.8158850073814392)]
+
+Text-shape relationships
+{0: 5}
+
+Arrow-shape relationships
+{1: (4, 6), 2: (5, 5), 3: (4, 4)}
+Traceback (most recent call last):
+  File "detection_custom.py", line 58, in <module>
+    arrow_flow = get_arrow_flow(arrow2shape, objects)
+  File "utils.py", line 266, in get_arrow_flow
+    raise Exception("No start and/or end terminator was identified")
+Exception: No start and/or end terminator was identified
