@@ -1,11 +1,11 @@
-name: yolo2
+name: yolo
 
 dependencies:
-  - python==3.7.13
+  - python==3.10.9
   - pip
+  - tensorflow==2.11.0
   - pip:
-    - opencv-contrib-python
-    - tensorflow==2.3.1
+    - opencv-python
     - seaborn>=0.10.0
     - tqdm==4.60.0
     - pandas
