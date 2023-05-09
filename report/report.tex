@@ -34,14 +34,14 @@
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{0.30\columnwidth}
-\includegraphics[width=\columnwidth]{sample.png}
+\begin{subfigure}{0.32\columnwidth}
+\includegraphics[width=\columnwidth]{fc_01.jpeg}
 \end{subfigure}
-\begin{subfigure}{0.30\columnwidth}
-\includegraphics[width=\columnwidth]{sample.png}
+\begin{subfigure}{0.32\columnwidth}
+\includegraphics[width=\columnwidth]{fc_02.jpeg}
 \end{subfigure}
-\begin{subfigure}{0.30\columnwidth}
-\includegraphics[width=\columnwidth]{sample.png}
+\begin{subfigure}{0.32\columnwidth}
+\includegraphics[width=\columnwidth]{fc_03.jpeg}
 \end{subfigure}
 \end{figure}
 
@@ -49,7 +49,7 @@ Flowcharts are incredibly versatile and flexible tools, often the most
 succinct way to summarize or visualize concepts such as workflow and
 relationships.
 While all productivity softwares support the creation of flowcharts through
-drawing primatives such as circles, blocks, and arrows, the creation
+drawing primitives such as circles, blocks, and arrows, the creation
 process is often awkward and unwieldy.  Many people avoid flowcharts due to such
 difficulty, as well as the inevitable discrepancy between what was intended and how it
 turns out. As such, 
@@ -64,7 +64,7 @@ We then analyze these elements and extract connectivity and
 symbolic relationships between them, and perform \textsc{ocr} to convert
 handwritings to actual English words. The result is a symbolic flowchart that fully
 captures the positional, relational, and textual intents, which we can then render
-in a variety of dfferent ways.
+in a variety of different ways.
 In the following, we describe our algorithm in more technical details.
 
 \begin{itemize}
@@ -84,7 +84,7 @@ all flowchart elements except arrows and texts.
 
 \item We wrote post-processing code to collect the list of detected objects with a
 rich set of positional and logical attributes.
-Hand-writings are identified and converted to actual text using
+Handwritings are identified and converted to actual text using
 Google's \textsc{tesseract-ocr} engine.
 
 \item We wrote a highly accurate custom algorithm to detect arrow direction
@@ -128,11 +128,11 @@ Google Colab (for fast \textsc{gpu}-based training),
 Name & Major, SJSU ID & Main Responsibility & \textsc{C} &
 	\textsc{T\&V} & \textsc{P} & \textsc{ES} & Overall \\
 \hline
-Mu Chen & SE, 014725425 & R\&D, \textsc{yolo}, \textsc{schemDraw} & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
-Roger Kuo & SE, 013784706 & R\&D, \textsc{yolo}, Arrow Detection & $40\%$ & $40\%$ & $10\%$ & $10\%$ & $25\%$ \\
+Mu Chen & SE, 014725425 & R\&D, \textsc{yolo}, \textsc{schemDraw} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
+Roger Kuo & SE, 013784706 & R\&D, \textsc{yolo}, Arrow Detection & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
 Hardy Leung${}^\star$ & AI, 016711877 &
-Proposal, Summary, Coordination & $10\%$ & $10\%$ & $10\%$ & $70\%$ & $25\%$ \\
-Jasmine Wang & AI, 002805362 & Testing, Presentation & $10\%$ & $10\%$ & $70\%$ & $10\%$ & $25\%$ \\ \hline
+Proposal, Summary, Coordination & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
+Jasmine Wang & AI, 002805362 & Testing, Presentation & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\ \hline
 \end{tabular}
 %The following summarizes our individual contributions
 \caption{\textsc{C} = coding, \textsc{TV} =
