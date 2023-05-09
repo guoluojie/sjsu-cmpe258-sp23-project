@@ -2,7 +2,7 @@
 
 \usepackage[skip=7pt plus1pt, indent=0pt]{parskip}
 \usepackage{hyperref}
-\usepackage[margin=0.7in]{geometry}
+\usepackage[margin=0.68in]{geometry}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -45,6 +45,7 @@
 \end{subfigure}
 \end{figure}
 
+{\bf Overview --}\phantom{i}
 Flowcharts are incredibly versatile and flexible tools, often the most
 succinct way to summarize or visualize concepts such as workflow and
 relationships.
@@ -58,6 +59,7 @@ hand-drawn flowchart recognition system
 that accurately translates user's intent to actual rendering of flowcharts in
 productivity applications.
 
+{\bf Technical Details --}\phantom{i}
 The key ingredient of our flowchart recognition system is the
 \textsc{yolo-v4} engine custom trained to detect flowchart objects.
 We then analyze these elements and extract connectivity and
@@ -93,22 +95,42 @@ between flowchart elements. Together with the shapes and text elements, we now
 have a full symbol representation of the flowchart.
 
 \item For demonstration purpose,
-we recreate the flowchart in \textsc{schemDraw} as intended by
+we recreate the flowchart in \textsc{schemdraw} as intended by
 the user, doing so by following the logical order of arrows.
 Our project can be easily extended to
 output many other formats including \textsc{svg}, various Python drawing
 formats (e.g.~Turtle and iPyCanvas), Asymptote for \LaTeX, Graphviz, and so on.
 
-\item All in all, we utilized the following tools in the project: Python 3.8,
+\end{itemize}
+
+{\bf Software and Tools --}\phantom{i}
+We utilized the following tools in the project: Python 3.8,
 \textsc{openCV} 2.0, Pytorch 2.0, \textsc{yolo} scripts from PyLessons,
 Google Colab (for fast \textsc{gpu}-based training),
 \textsc{yolo-v4}, Google \textsc{tesseract}, and
-\textsc{schemDraw}.
-\end{itemize}
+\textsc{schemdraw}.
 
 %\begin{center}
 %\rule{0.5\textwidth}{0.05pt}
 %\end{center}
+
+{\bf Challenges and Lessons --}\phantom{i}
+We were pleased with what we have achieved in building the complex
+flow-chart detection system, given the time constraint.
+While the end result was not production-ready, we have made
+significant inroad with the completion of a well-trained \textsc{yolo-v4}
+based detection system, a battery of downstream algorithms (arrow detection,
+flow-following) to analyze and re-render the flowcharts.
+That said, we do acknowledge multiple areas of
+improvement: (1) we would certainly benefit from more diverse and
+high-quality training sets from multiple sources,
+(2) high mAP on block elements was undone by relatively
+low text and arrow detection in \textsc{yolo},
+(3) the arrowhead detection was difficult, and prone to failure in noisy
+or busy environment, (4)
+Google's \textsc{tesseract} was surprisingly inaccurate, (5) we were
+severely limited by the inflexibility of \textsc{schemdraw}, and could have
+chosen a more robust alternative.
 
 %In conclusion,
 %we have successfully implemented a \textsc{yolo-v4} based program to
@@ -119,7 +141,9 @@ Google Colab (for fast \textsc{gpu}-based training),
 %testing and verification,
 %\textsc{P} = PPT, \textsc{ES} = executive summary. $\star$ Project Coordinator).
 
-% \subsection*{Contributions}
+\pagebreak
+
+\subsection*{Contributions}
 
 \begin{table}[htbp]
 \centering
@@ -128,7 +152,7 @@ Google Colab (for fast \textsc{gpu}-based training),
 Name & Major, SJSU ID & Main Responsibility & \textsc{C} &
 	\textsc{T\&V} & \textsc{P} & \textsc{ES} & Overall \\
 \hline
-Mu Chen & SE, 014725425 & R\&D, \textsc{yolo}, \textsc{schemDraw} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
+Mu Chen & SE, 014725425 & R\&D, \textsc{yolo}, \textsc{schemdraw} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
 Roger Kuo & SE, 013784706 & R\&D, \textsc{yolo}, Arrow Detection & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
 Hardy Leung${}^\star$ & AI, 016711877 &
 Proposal, Summary, Coordination & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} & \textsc{tbd} \\
