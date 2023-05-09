@@ -116,19 +116,20 @@ Google Colab (for fast \textsc{gpu}-based training),
 
 {\bf Challenges and Lessons --}\phantom{i}
 We were pleased with what we have achieved in building the complex
-flow-chart detection system, given the time constraint.
-While the end result was not production-ready, we have made
+flowchart detection system, given the time constraint.
+While not production-ready, we have made
 significant inroad with the completion of a well-trained \textsc{yolo-v4}
 based detection system, a battery of downstream algorithms (arrow detection,
 flow-following) to analyze and re-render the flowcharts.
 That said, we do acknowledge multiple areas of
-improvement: (1) we would certainly benefit from more diverse and
+improvement: (1) we would benefit from more diverse and
 high-quality training sets from multiple sources,
 (2) high mAP on block elements was undone by relatively
 low text and arrow detection accuracy in \textsc{yolo},
 (3) arrowhead detection was difficult, and prone to failure in noisy
-or busy environment, (4)
-Google's \textsc{tesseract} was surprisingly inaccurate, (5) we were
+or busy environment, (4) \textsc{tesseract} needs to be retrained
+for hand-writings
+to attain acceptable accuracy, (5) we were
 severely limited by the inflexibility of \textsc{schemdraw}, and could have
 chosen a more robust alternative.
 
