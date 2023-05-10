@@ -68,4 +68,7 @@ Enter in the terminal ```$ tensorboard --logdir=log``` and then navigate to http
 ![Flowchart Drawing](./images/fc_drawing.jpg)
 
 ### Demonstration
-![Demo](./images/demo.mp4)
+![Demo](./presentation/demo.mp4)
+
+### Presentation
+![Presentation](./presentation/presentation.pdf)
