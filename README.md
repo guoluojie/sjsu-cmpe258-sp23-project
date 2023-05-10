@@ -1,9 +1,9 @@
 # Hand-drawn Flowchart Recognition
 ## Team Members:
-- Mu Chen, MS-SE (mu.chen@sjsu.edu) [SJSU ID: 014725425]
-- Roger Kuo, MS-SE (roger.kuo@sjsu.edu) [SJSU ID: 013784706]
-- Hardy Leung, MS-AI (kwok-shing.leung@sjsu.edu) [SJSU ID: 016711877] COORDINATOR
-- Jasmine Wang, MS-AI (jasmine.wang@sjsu.edu) [SJSU ID: 002805362]
+- Mu Chen, MS-SE
+- Roger Kuo, MS-SE
+- Hardy Leung, MS-AI
+- Jasmine Wang, MS-AI
 
 [Proposal](./report/proposal.pdf)
 
